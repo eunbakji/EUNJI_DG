@@ -7,8 +7,8 @@
 <%
     request.setCharacterEncoding("UTF-8");
 %>
-    
-<jsp:useBean id="listDAO" class="list.ListDAO" />
+
+<jsp:useBean id="listDAO" class = "asset.ListDAO"/>
 <!DOCTYPE html>
 <html>
 <head>

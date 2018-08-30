@@ -1,4 +1,4 @@
-package list;
+package asset;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -26,8 +26,8 @@ public class ListDAO {
 		
 	}
 		
-	public ArrayList<ListItemDo> getListItem() {
-		ArrayList<ListItemDo> datas = new ArrayList<ListItemDo>();
+	public ArrayList<Asset> getListItem() {
+		ArrayList<Asset> datas = new ArrayList<Asset>();
 		
 		String SQL="SELECT * FROM AssetTable";
 		try {
@@ -35,24 +35,24 @@ public class ListDAO {
 			ResultSet rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
-				ListItemDo listItemDO = new ListItemDo();
+				Asset asset = new Asset();
 				
 			
-				listItemDO.setNo(rs.getInt("no"));
-				listItemDO.setAsset_name(rs.getString("asset_name"));
-				listItemDO.setPriority(rs.getInt("priority"));
-				listItemDO.setAccount_manage(rs.getString("account_manage"));
-				listItemDO.setEncryption(rs.getString("encryption"));
-				listItemDO.setLogging(rs.getString("logging"));
-				listItemDO.setExternal_connect(rs.getString("external_connect"));
-				listItemDO.setAsset_type(rs.getString("asset_type"));
-				listItemDO.setInter_face(rs.getString("inter_face"));
-				listItemDO.setProtocol(rs.getString("protocol"));
-				listItemDO.setOs_type(rs.getString("os_type"));
-				listItemDO.setUsage(rs.getString("usage"));
+				asset.setNo(rs.getInt("no"));
+				asset.setAsset_name(rs.getString("asset_name"));
+				asset.setPriority(rs.getInt("priority"));
+				asset.setAccount_manage(rs.getString("account_manage"));
+				asset.setEncryption(rs.getString("encryption"));
+				asset.setLogging(rs.getString("logging"));
+				asset.setExternal_connect(rs.getString("external_connect"));
+				asset.setAsset_type(rs.getString("asset_type"));
+				asset.setInter_face(rs.getString("inter_face"));
+				asset.setProtocol(rs.getString("protocol"));
+				asset.setOs_type(rs.getString("os_type"));
+				asset.setUsage(rs.getString("usage"));
 				
 				
-				datas.add(listItemDO);
+				datas.add(asset);
 			}
 
 			rs.close();

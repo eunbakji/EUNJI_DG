@@ -1,7 +1,14 @@
 package asset;
 
 public class Asset {
-   private String asset_name;
+	private int no;
+   public int getNo() {
+		return no;
+	}
+	public void setNo(int no) {
+		this.no = no;
+	}
+private String asset_name;
    private int priority;
    private String account_manage;
    private String encryption;
