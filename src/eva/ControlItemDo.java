@@ -2,14 +2,25 @@ package eva;
 
 public class ControlItemDo {
 	
+	@Override
+	public String toString() {
+		return "ControlItemDo [id=" + id + ", no=" + no + ", control_field=" + control_field + ", control_item="
+				+ control_item + ", control_item_no=" + control_item_no + ", check_item=" + check_item + ", result="
+				+ result + ", importance=" + importance + "]";
+	}
 	private int id;
 	private String no;
 	private String control_field;
-	private String control_item;
 	private String control_item_no;
+	private String control_item;
 	private String check_item;
 	private String result;
 	private String importance;
+	private String management;
+	private String physics;
+	private String method;
+	private String action;
+	
 	public int getId() {
 		return id;
 	}
@@ -58,5 +69,36 @@ public class ControlItemDo {
 	public void setImportance(String importance) {
 		this.importance = importance;
 	}
+	public int parseInt() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	public String getManagement() {
+	      return management;
+	   }
+	   public void setManagement(String management) {
+	      this.management = management;
+	   }
+	   public String getPhysics() {
+	      return physics;
+	   }
+	   public void setPhysics(String physics) {
+	      this.physics = physics;
+	   }
+	   public String getMethod() {
+	      return method;
+	   }
+	   public void setMethod(String method) {
+	      this.method = method;
+	   }
+	   public String getAction() {
+	      return action;
+	   }
+	   public void setAction(String action) {
+	      this.action = action;
+	   }
+	
+	
 
 }

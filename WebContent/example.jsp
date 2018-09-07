@@ -15,58 +15,17 @@
   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
 
   crossorigin="anonymous"></script>
+<%
+String[] check = request.getParameterValues("checkBox");
 
-<script>
-
-function getData() {
-
-	$("input:checkbox[name='aa[]']").each(function(i, v){
-
-		if(this.checked == true){
-
-			console.log($("#grid").find("tr").eq(i).html());
-
-		}
-
-	});
-
+if(check != null) {
+for(int i=0; i<check.length; i++) {
+System.out.println(check[i]);
+}
 }
 
-</script>
+%>
 
-</head>
-
-<body>
-
-<table id="grid">
-
-<tr>
-
-	<td><input type="checkbox" name="aa[]"></td>
-
-	<td>데이터1</td>
-
-</tr>
-
-<tr>
-
-	<td><input type="checkbox" name="aa[]"></td>
-
-	<td>데이터2</td>
-
-</tr>
-
-<tr>
-
-	<td><input type="checkbox" name="aa[]"></td>
-
-	<td>데이터3</td>
-
-</tr>
-
-</table>
-
-<input type="button" value="가져오기" onclick="getData()">
 
 </body>
 
