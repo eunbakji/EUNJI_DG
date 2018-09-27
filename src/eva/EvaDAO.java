@@ -5,15 +5,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.*;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
-import asset.Asset;
+
+
 
 
 public class EvaDAO {
@@ -145,9 +141,10 @@ public class EvaDAO {
 	          pstmt.setString(6, insertItemDo.get(j).getCheck_item().toString());
 	          pstmt.setString(7, insertItemDo.get(j).getResult().toString());
 	          pstmt.setString(8, insertItemDo.get(j).getImportance().toString());
+	          pstmt.executeUpdate();
 	          }
 	          
-	          pstmt.executeUpdate();
+	          
 	       } catch(Exception e) {
 	          
 	    	   e.printStackTrace();
@@ -157,21 +154,4 @@ public class EvaDAO {
 }
 	
 }
-	
-	
-		
-	
-	
-	
-
-
-	
-	
-
-
-
-
-	
-	
-	
 	

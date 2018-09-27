@@ -71,7 +71,7 @@
 
    
   </div> 
-    <div id = "evaluation_table" style=" height:auto;padding-left:10px;margin:10px; overflow:scroll;display:none" >
+    <div id = "evaluation_table" style=" height:420px;padding-left:10px;margin:10px; overflow:scroll;display:none" >
     <form name = form1 id = "myForm" action = "asset_eva_select.jsp" method = post>
     	<input type="hidden" id="real_data" name="real_data"/>
         <table class="evaluation_table" id = "grid" style="text-align: center; border : 1px solid #dddddd">
@@ -195,9 +195,8 @@
        
 		   
       </form>  
-      </div>
-      <div id = button style="padding-left:10px;margin:10px" align="right">
-
+     </div>
+     <div id = button style="padding-left:10px;margin:10px" align="right">
 
 
 </div>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="ICS_VAProgram_DG">
+    <wb-module deploy-name="EUNJI">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="ICS_VAProgram_DG"/>
-        <property name="java-output-path" value="/ICS_VAProgram_DG/build/classes"/>
+        <property name="java-output-path" value="/EUNJI/build/classes"/>
+        <property name="context-root" value="EUNJI"/>
     </wb-module>
 </project-modules>
