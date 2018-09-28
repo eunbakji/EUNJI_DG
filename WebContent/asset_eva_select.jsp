@@ -42,11 +42,10 @@ for(ControlItemDo data : itemList) {
 String result =  (itemList.toString());
 request.setAttribute("result", result); //포워딩할 페이지에서 result 객체를 받기위한 객체명 "result"
 
-pageContext.forward("sec_eva.jsp"); //결과창 sec_eva.jsp로 포워딩
-
 EvaDAO insertDAO = new EvaDAO(); // ControlItemDB와 연결하는 EvaDAO 객체를 생성
 insertDAO.insertSelectItem(itemList); //EvaDAO에서 정의한 insertSelectItem함수로 SelectedControlItemDo 디비에 삽입
 
+pageContext.forward("sec_eva.jsp"); //결과창 sec_eva.jsp로 포워딩
 
 %>
 </body>
