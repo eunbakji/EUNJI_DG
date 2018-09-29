@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
+  
  <%@ page import="java.io.PrintWriter" %>
 <!DOCTYPE html>
 <html>
@@ -80,11 +81,13 @@
 
                         <!-- Feature -->
                            <section id="section1">
-                              <a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
                               <header>
                                  <h3>Introduction</h3>
                               </header>
-                              <p>프로그램 소개 및 만들게 된 계기 같은거 적으면 될 듯ㅎ 이미지는 못 차자써여~~~~~</p>
+                              <p>
+                             ▷ 해커가 인터넷에 연결된 외부 시스템과 폐쇄된 내부 망의 접점에서 발생할 수 있는 보안상 허점을 이용해 폐쇄망을 공격하는 사례가 지속적으로 발견되고 있음</br>
+			▷ 국내 산업제어시스템의 체계적인 보안수준 강화를 위해 ISO27014(정보보안 Governance 표준)의 영역과 미국 원자력산업협회에서 발행한 ‘NEI 08-09'의 통제 항목을 통합하여 개발</br>
+ 			▷ 보안취약점 진단 프로그램에서 도출된 결과를 바탕으로 ICS 정보보안 Governance 구축의 초석 마련</p>
                            </section>
 
                      </div>
@@ -93,11 +96,18 @@
 
                         <!-- Feature -->
                            <section id="section2">
-                              <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
                               <header>
-                                 <h3>How to use?</h3>
+                                 <h3>Advantage & Feature</h3>
                               </header>
-                              <p>사용방법을 사용자들에게 알려주면 됩니다 ㅇㅅㅇ 이미지는 못 차자써여~~~</p>
+                              <p>
+                              ▷ 시간이 지날수록 보안 사고는 점차 지능화되어 효과적인 대응이 어렵기 때문에 정보보호의 패러다임은 기술적인 관점에서 기업전체에 대한 관점으로 변화하고 있음</br>
+▷ IT 환경의 변화와 보안사고의 지속적인 발생에 대응할 보안 위험 통합 관리 시스템이 요구됨</br>
+▷ 이 프로그램은 이러한 정보보호 거버넌스 구조 내에서 산업제어시스템을 보유한 에너지 기관에 초점을 맞추기 위해 미국 원자력협회에서 발행한 NEI 08-09의 통제항목을 접목시켜 ICS 보안 위험을 통합적으로 관리 
+                              
+                              ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+                              ㅤㅤ
+                              
+                              </p>
                            </section>
 
                      </div>
@@ -105,11 +115,14 @@
 
                         <!-- Feature -->
                            <section id="section3">
-                              <a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
                               <header>
-                                 <h3>Program Features</h3>
+                                 <h3>Proposal Background</h3>
                               </header>
-                              <p>프로그램 장점?이랑 특징들 나열하면 됩니다~~~~~~~~~~ 이미지는 역시 없습니다 꺄르르륵깔깔 빠빠나나빠빠빠나나나나빠빠나나빠빠빠나나나나레드벨벳짱짱</p>
+                              <p>
+                              ▷ ICS 중요성: 에너지/교통/통신/상하수도 등 주요 인프라가 제 역할을 하지 못할 경우 우리 삶에 큰 혼란 야기</br>
+ 			▷ ICS 대상 해킹: 이란 핵시설, 한수원 원전, 우크라이나 전력망 등 산업시설의 근간인 ICS 표적 공격 증가</br>
+ ▷ 사이버위협 전문가 부족: 2017년 3월 포네몬 연구소 조사에 의하면 에너지 기관/기업 내부에 사이버 위협을 관리할 전문가가 부족하다고 55%가 응답</br>
+ ▷ 보안Governance구축: 에너지 기업/기관의 지속적인 정보보안 수준 향상을 위해 정보보안 관리체계 구축 필요</p>
                            </section>
 
                      </div>
@@ -119,8 +132,8 @@
                         <a href="main.jsp" class="button icon fa-file">Back to Top</a>
                      </div>
                </div>
-            </section>
-            <footer id="mainfooter"><span>Copyright @kimjuyeon @kimeunji @yoonjoohye</span></footer>
+            <footer id="mainfooter">
+            <span>ㅤㅤ ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ COPYRIGHT ⓒ 2018 HelloSecurity. All Rights Reserved</span></footer>
    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
    <script src="js/bootstrap.js"></script>
 
