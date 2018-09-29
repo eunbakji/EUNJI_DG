@@ -49,7 +49,7 @@ public class ListDAO {
 				asset.setInter_face(rs.getString("inter_face"));
 				asset.setProtocol(rs.getString("protocol"));
 				asset.setOs_type(rs.getString("os_type"));
-				asset.setUsage(rs.getString("usage"));
+				asset.setUsages(rs.getString("usage"));
 				
 				
 				datas.add(asset);

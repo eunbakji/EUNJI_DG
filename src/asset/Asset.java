@@ -1,14 +1,8 @@
 package asset;
 
 public class Asset {
-	private int no;
-   public int getNo() {
-		return no;
-	}
-	public void setNo(int no) {
-		this.no = no;
-	}
-private String asset_name;
+   private int no;
+   private String asset_name;
    private int priority;
    private String account_manage;
    private String encryption;
@@ -18,8 +12,17 @@ private String asset_name;
    private String inter_face;
    private String protocol;
    private String os_type;
-   private String usage;
+   private String usages;
+   private String userID; // 자산수정 기능구현 위한 변수 
+   private int assetAvailable; // 자산삭제 기능구현 위한 변수
    
+
+public int getNo() {
+		return no;
+	}
+	public void setNo(int no) {
+		this.no = no;
+	}
    public String getAsset_name() {
       return asset_name;
    }
@@ -80,13 +83,24 @@ private String asset_name;
    public void setOs_type(String os_type) {
       this.os_type = os_type;
    }
-   public String getUsage() {
-      return usage;
+   public String getUsages() {
+      return usages;
    }
-   public void setUsage(String usage) {
-      this.usage = usage;
+   public void setUsages(String usages) {
+      this.usages = usages;
    }
+   public String getUserID() {
+		return userID;
+	}
+	public void setUserID(String userID) {
+		this.userID = userID;
+	}
    
-
+   public int getAssetAvailable() {
+	return assetAvailable;
+    }
+   public void setAssetAvailable(int assetAvailable) {
+	this.assetAvailable = assetAvailable;
+   }
 
 }

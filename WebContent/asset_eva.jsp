@@ -107,8 +107,8 @@
               <td><c:out value = "${data.control_item}"/></td>
               <td><c:out value = "${data.check_item}"/></td>
               <td><select id = "select">
-                 <option value = "Y"> Y</option>
-                  <option value = "N"> N</option>
+                 <option value = "N"> N</option>
+                  <option value = "Y"> Y</option>
                   </select></td>
               <td><c:out value = "${data.importance}"/></td>
               <td style="display: none;"><c:out value = "${data.management}"/></td>
