@@ -65,6 +65,7 @@
       <script>
          function div_show() {
             document.getElementById("evaluation_table").style.display = "block";
+            document.getElementById("selectBtn").style.display = "block";
            }
        </script>
 <!-- </form> -->
@@ -123,9 +124,12 @@
 
         </table>
          </div>
-      <div id="selectBtn" style="padding-left:10px;margin:10px" align="right">
-   <a href="sec_eva.jsp" class="btn btn-primary pull-right" >평가완료</button></a></div>
-       
+         <div id="selectBtn" style="padding-left:10px;margin:10px;display:none" align="right">
+         <button class = "btn btn-primary pull-right" onclick="location.href='sec_eva.jsp'" type="button">평가완료</button>
+         </div>
+      	
+   
+         
        <script>
        $(document).ready(function () { 
          $('#selectBtn').click(function(){
