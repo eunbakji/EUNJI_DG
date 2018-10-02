@@ -124,6 +124,32 @@ public class EvaDAO {
              }
 
    }
+      public ArrayList<SelectedControlItem> getFinalItem() { //n
+          ArrayList<SelectedControlItem> datas = new ArrayList<SelectedControlItem>();
+          
+          String SQL="SELECT control_item_no, result, importance FROM SelectedControlItem WHERE result = 'N'";
+          try {
+             pstmt = conn.prepareStatement(SQL);
+             ResultSet rs = pstmt.executeQuery();
+             
+             while(rs.next()) {
+                SelectedControlItem getfinalItem  = new SelectedControlItem();
+                getfinalItem.setControl_item_no(rs.getString("control_item_no"));
+                getfinalItem.setImportance(rs.getString("importance"));
+                getfinalItem.setResult(rs.getString("result"));
+
+                datas.add(getfinalItem);
+                //Collections.sort(datas, new sort());               
+             }
+
+             rs.close();
+          }
+          catch(Exception e) {
+          e.printStackTrace();
+          }
+          return datas;
+             
+      }   
 
 }
    
