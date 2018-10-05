@@ -8,6 +8,7 @@
 %>
     
 <jsp:useBean id="evaDAO" class="eva.EvaDAO" />
+<jsp:useBean id="assetDAO" class="asset.AssetDAO" />
 
 <!DOCTYPE html>
 <html>
@@ -55,26 +56,60 @@
   <article id = "article">
     <div id="check" style="margin:10px; padding:5px; text-align : right;">
    
-<!-- <form action="" method="post"> -->
-      <select name="select_asset">
+	<form action="" method="post" name = "formm">
+      <select name="select_asset" id = "select_asset">
            <c:forEach var="data" items="${evaDAO.getAssetlist() }">
               <option value="${data }">${data }</option>
            </c:forEach>
       </select>
-      <button type = "button" onclick="div_show();">선택</button>
-      <script>
-         function div_show() {
-            document.getElementById("evaluation_table").style.display = "block";
-            document.getElementById("selectBtn").style.display = "block";
-           }
-       </script>
-<!-- </form> -->
+      <input type = "submit" value ="선택">
+	</form>
+	
+<%
+//select box에서 사용자가 선택한 자산명을 가져오는 함수
+String[] sels = request.getParameterValues("select_asset"); 
+String sel = "";
+if (sels != null){ 
+   for(int i = 0;i < sels.length;i++)
+	   sel += sels[i] + " "; } 
+
+String asset_name = sel; //asset_name에 저장
+
+request.setAttribute("str", asset_name);
+
+
+Connection Conn=null;
+
+try {
+    String dbURL = "jdbc:mysql://ics-vaprogram.cti5lacaght2.ap-northeast-2.rds.amazonaws.com:3306/ICS2?useUnicode=true&characterEncoding=utf8";
+    String dbID = "admin";
+    String dbPassword = "password";
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    Conn= DriverManager.getConnection(dbURL, dbID, dbPassword);
+    String sql = "SELECT * from AssetTable where asset_name = '" +asset_name+ "'";
+    PreparedStatement pstmt = Conn.prepareStatement(sql);
+    ResultSet rs = pstmt.executeQuery();
+    
+    rs.next();
+    int priority = rs.getInt("priority");
+    request.setAttribute("PRIORITY", priority);
+    
+} catch (Exception e) {
+   e.printStackTrace();
+}
+
+%>	
+선택한 자산 : ${str } <br> 
+자산우선순위 : ${PRIORITY } <br>
 
    
-  </div> 
-    <div id = "evaluation_table" style=" height:480px;padding-left:10px;margin:10px; overflow:scroll;display:none" >
-    <form name = form1 id = "myForm" action = "asset_eva_select.jsp" method = post>
-       <input type="hidden" id="real_data" name="real_data"/>
+  </div>
+  
+  <c:if test="${str != '' }">
+	<form name = form1 id = "myForm" action = "asset_eva_select.jsp" method = post> 
+    <div id = "evaluation_table" style=" height:480px;padding-left:10px;margin:10px; overflow:scroll;" >
+    	<input type="hidden" name="asset_name" value="${str }" />
+       	<input type="hidden" id="real_data" name="real_data"/>
         <table class="evaluation_table" id = "grid" style="text-align: center; border : 1px solid #dddddd">
           <thead>
              <tr>
@@ -124,13 +159,22 @@
 
         </table>
          </div>
-         <div id="selectBtn" style="padding-left:10px;margin:10px;display:none" align="right">
-         <button class = "btn btn-primary pull-right" onclick="location.href='sec_eva.jsp'" type="button">평가완료</button>
+         <div id="selectBtn" style="padding-left:10px;margin:10px;" align="right">
+         <!-- <button class = "btn btn-primary pull-right" onclick="location.href='asset_eva_select.jsp';"  type="button">평가완료</button> -->
+         <button class = "btn btn-primary pull-right" type="submit" onclick="eva_end()">평가완료</button>
+         
+         <script type="text/javascript">
+         function eva_end() {
+             return confirm("자산 평가가 완료되었습니다.")
+         }
+         
+         </script>
          </div>
       	
    
          
        <script>
+       
        $(document).ready(function () { 
          $('#selectBtn').click(function(){
            
@@ -139,7 +183,7 @@
             var checklen = $("input[name=checkBox]:checked").length;
             
             
-               //each는 가각에 대해서 반복문을 돌리는거 같ㅇㅁ
+               //each는 가각에 대해서 반복문을 돌린다.
                  checkbox.each(function(i){
                var tr = checkbox.parent().parent().eq(i);
                var td = tr.children();
@@ -152,7 +196,7 @@
                var control_item = td.eq(5).text();       
                var check_item = td.eq(6).text();
                var result = $(this).closest("tr").find("option:selected").val();
-               //var result =$("#select option:selected").val();   
+                 
                
                var importance = td.eq(8).text();
                var management = td.eq(9).text();
@@ -185,20 +229,20 @@
                 //배열에 저장 된 데이터를 json 문자열로 파싱
                      });
                   var json_str = JSON.stringify(tdArr);
-                 alert(json_str);
+                //alert(json_str); 매번보는 통제항목 알림창
                  
                  
                //hidden으로 설정 된 input 태그에 json 문자열 세팅
                $('#real_data').val(json_str);
                    
-              //form 태그의  action 페이지에 전송하기 위해 form id 호출!
+              /* //form 태그의  action 페이지에 전송하기 위해 form id 호출!
               $('#myForm').submit();    
       
                 var real_data = { 'real_data' : json_str }
                 $.post('asset_eva_select.jsp', real_data, function(result) {
                 // alert(result);
                
-                });
+                }); */
                
                });
                
@@ -206,9 +250,8 @@
        
        </script>       
      </form>  
-      <div id = button style="padding-left:10px;margin:10px" align="right">
-
-</div>
+  
+  </c:if>
 
 </article>
 
