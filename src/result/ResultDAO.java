@@ -13,9 +13,9 @@ public class ResultDAO {
    
    public ResultDAO() {
       try {
-         String dbURL ="jdbc:mysql://ics-vaprogram.cti5lacaght2.ap-northeast-2.rds.amazonaws.com:3306/ICS2";
-         String dbID = "admin";
-         String dbPassword = "password";
+    	 String dbURL = "jdbc:mysql://127.0.0.1:3306/ics2?serverTimezone=UTC?";
+         String dbID = "root";
+         String dbPassword = "hellosecurity";
          Class.forName("com.mysql.cj.jdbc.Driver");
          conn= DriverManager.getConnection(dbURL, dbID, dbPassword);
          
@@ -27,7 +27,7 @@ public class ResultDAO {
    public ArrayList<String> getAssetlist() {
       ArrayList<String> datas = new ArrayList<String>();
       
-      String SQL="SELECT asset_name FROM AssetTable";
+      String SQL="SELECT asset_name FROM assettable";
       try {
          pstmt = conn.prepareStatement(SQL);
          ResultSet rs = pstmt.executeQuery();
@@ -50,7 +50,7 @@ public class ResultDAO {
    public ArrayList<Result> getResult() {
       ArrayList<Result> datas = new ArrayList<Result>();
       
-      String SQL="SELECT * FROM SelectedControlItem";
+      String SQL="SELECT * FROM selectedcontrolitem";
       try {
          pstmt = conn.prepareStatement(SQL);
          ResultSet rs = pstmt.executeQuery();

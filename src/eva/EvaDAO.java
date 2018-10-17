@@ -19,9 +19,9 @@ public class EvaDAO {
    
    public EvaDAO() {
       try {
-         String dbURL ="jdbc:mysql://ics-vaprogram.cti5lacaght2.ap-northeast-2.rds.amazonaws.com:3306/ICS2";
-         String dbID = "admin";
-         String dbPassword = "password";
+    	  String dbURL = "jdbc:mysql://127.0.0.1:3306/ics2?serverTimezone=UTC";
+          String dbID = "root";
+          String dbPassword = "hellosecurity";
          Class.forName("com.mysql.jdbc.Driver");
          conn= DriverManager.getConnection(dbURL, dbID, dbPassword);
          
@@ -35,7 +35,7 @@ public class EvaDAO {
    public ArrayList<String> getAssetlist() { //getAssetlist 데이터를 순서대로 String 배열에 넣음
       ArrayList<String> datas = new ArrayList<String>(); //String 객체 생성
       
-      String SQL="SELECT asset_name FROM AssetTable"; //SQL 쿼리문
+      String SQL="SELECT asset_name FROM assettable"; //SQL 쿼리문
       try {
          pstmt = conn.prepareStatement(SQL);
          ResultSet rs = pstmt.executeQuery();
@@ -58,7 +58,7 @@ public class EvaDAO {
    public ArrayList<ControlItemDo> getControlItem() {
       ArrayList<ControlItemDo> datas = new ArrayList<ControlItemDo>();
       
-      String SQL="SELECT * FROM ControlItem";
+      String SQL="SELECT * FROM controlitem";
       try {
          pstmt = conn.prepareStatement(SQL);
          ResultSet rs = pstmt.executeQuery();
@@ -94,7 +94,7 @@ public class EvaDAO {
    //asset_eva_select에서 만든 List<ControlItemDo> json객체를 SelectedControlItemDo DB에 넣을 함수 정의
 
       public void insertSelectItem(List<ControlItemDo> insertItemDo) {
-         String sql = "INSERT INTO SelectedControlItem("
+         String sql = "INSERT INTO selectedcontrolitem("
                + "id, no, control_field, control_item_no, control_item, check_item, result, importance, management, physics, method, action)"
                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             try {
